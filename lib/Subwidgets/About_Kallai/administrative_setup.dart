@@ -9,6 +9,19 @@ class AdminidtrativeSetup extends StatefulWidget {
 }
 
 class _AdminidtrativeSetupState extends State<AdminidtrativeSetup> {
+  String TapToExpandIt = 'Tap to Expand it';
+  String Sentence = 'Widgets that have global keys reparent their subtrees when'
+      ' they are moved from one location in the tree to another location in the'
+      ' tree. In order to reparent its subtree, a widget must arrive at its new'
+      ' location in the tree in the same animation frame in which it was removed'
+      ' from its old location the tree.'
+      ' Widgets that have global keys reparent their subtrees when they are moved'
+      ' from one location in the tree to another location in the tree. In order'
+      ' to reparent its subtree, a widget must arrive at its new location in the'
+      ' tree in the same animation frame in which it was removed from its old'
+      ' location the tree.';
+  bool isExpanded = true;
+  bool isExpanded2 = true;
   List data = [
     [
       '1',
@@ -95,6 +108,11 @@ class _AdminidtrativeSetupState extends State<AdminidtrativeSetup> {
       'Village Administration, Record Room',
     ]
   ];
+
+  List ft = [
+    ['1', 'Thiru P.N.Sridhar I.A.S', '16.06.2021', 'Till Date'],
+    ['2', 'Thiru Kiran Gurrala I.A.S', '22.11.2019', '15.06.2021']
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,29 +120,109 @@ class _AdminidtrativeSetupState extends State<AdminidtrativeSetup> {
         title: Text("Adminidtrative Setup"),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(4),
-        child: DataTable2(
-            columnSpacing: 5,
-            horizontalMargin: 15,
-            dataRowHeight: 80,
-            minWidth: 600,
-            lmRatio: 50,
-            columns: [
-              DataColumn2(
-                  label: Center(child: Text('Sl.no')), size: ColumnSize.L),
-              DataColumn2(label: Text('Section Name'), size: ColumnSize.L),
-              DataColumn2(label: Text('Section Head'), size: ColumnSize.L),
-              DataColumn2(label: Text('Subject'), size: ColumnSize.L),
-            ],
-            rows: List<DataRow>.generate(
-                data.length,
-                (index) => DataRow(cells: [
-                      DataCell(Center(child: Text(data[index][0]))),
-                      DataCell(Text(data[index][1])),
-                      DataCell(Text(data[index][2])),
-                      DataCell(Text(data[index][3])),
-                    ]))),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Container(
+                  height: 30,
+                  child: Text(
+                    "Revenue and Disaster Management",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Container(
+                  color: Colors.grey,
+                  height: 30,
+                  width: MediaQuery.of(context).size.width,
+                  child: Center(
+                    child: Text(
+                      "Sections In Collectorate – Kallakurichi",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4),
+              child: DataTable2(
+                  columnSpacing: 5,
+                  horizontalMargin: 15,
+                  dataRowHeight: 80,
+                  minWidth: 600,
+                  lmRatio: 50,
+                  columns: [
+                    DataColumn2(
+                        label: Center(child: Text('Sl.no')),
+                        size: ColumnSize.L),
+                    DataColumn2(
+                        label: Text('Section Name'), size: ColumnSize.L),
+                    DataColumn2(
+                        label: Text('Section Head'), size: ColumnSize.L),
+                    DataColumn2(label: Text('Subject'), size: ColumnSize.L),
+                  ],
+                  rows: List<DataRow>.generate(
+                      data.length,
+                      (index) => DataRow(cells: [
+                            DataCell(Center(child: Text(data[index][0]))),
+                            DataCell(Text(data[index][1])),
+                            DataCell(Text(data[index][2])),
+                            DataCell(Text(data[index][3])),
+                          ]))),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Container(
+                  color: Colors.grey,
+                  height: 30,
+                  width: MediaQuery.of(context).size.width,
+                  child: Center(
+                    child: Text(
+                      "Sections In Collectorate – Kallakurichi",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Text('''
+              PO(DRDA) : Rural Development and Panchayat Raj
+              PA(NM) : School Noon Meals Related Activites
+              AD(audit) : Audit and High Level committe
+              AD(P) : Panchayats Related Activities
+              '''),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4),
+              child: DataTable2(
+                  columnSpacing: 5,
+                  horizontalMargin: 15,
+                  dataRowHeight: 80,
+                  minWidth: 600,
+                  lmRatio: 50,
+                  columns: [
+                    DataColumn2(
+                        label: Center(child: Text('Sl.no')),
+                        size: ColumnSize.L),
+                    DataColumn2(label: Text('Name'), size: ColumnSize.L),
+                    DataColumn2(label: Text('From'), size: ColumnSize.L),
+                    DataColumn2(label: Text('To'), size: ColumnSize.L),
+                  ],
+                  rows: List<DataRow>.generate(
+                      ft.length,
+                      (index) => DataRow(cells: [
+                            DataCell(Center(child: Text(ft[index][0]))),
+                            DataCell(Text(ft[index][1])),
+                            DataCell(Text(ft[index][2])),
+                            DataCell(Text(ft[index][3])),
+                          ]))),
+            ),
+          ],
+        ),
       ),
     );
   }
