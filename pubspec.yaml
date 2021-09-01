@@ -34,6 +34,7 @@ dependencies:
   flutter_arc_speed_dial: ^2.0.0
   expandable: ^5.0.1
   url_launcher: ^6.0.9
+  data_table_2: ^2.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
