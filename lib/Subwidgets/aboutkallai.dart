@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:kallakkurichi/Subwidgets/About_Kallai/administrative_setup.dart';
+import 'package:kallakkurichi/Subwidgets/About_Kallai/administrativesetuphome.dart';
 import 'package:kallakkurichi/Subwidgets/About_Kallai/district_profile.dart';
 import 'package:kallakkurichi/Subwidgets/About_Kallai/egovernance.dart';
 import 'package:kallakkurichi/Subwidgets/About_Kallai/elected_representative.dart';
@@ -30,7 +31,7 @@ class _AboutKallaiState extends State<AboutKallai> {
     [
       ''' Administrative
         Setup''',
-      AdminidtrativeSetup(),
+      AdministrativesetupHome(),
     ],
     [
       '''         Elected 

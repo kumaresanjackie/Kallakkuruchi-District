@@ -9,19 +9,6 @@ class AdminidtrativeSetup extends StatefulWidget {
 }
 
 class _AdminidtrativeSetupState extends State<AdminidtrativeSetup> {
-  String TapToExpandIt = 'Tap to Expand it';
-  String Sentence = 'Widgets that have global keys reparent their subtrees when'
-      ' they are moved from one location in the tree to another location in the'
-      ' tree. In order to reparent its subtree, a widget must arrive at its new'
-      ' location in the tree in the same animation frame in which it was removed'
-      ' from its old location the tree.'
-      ' Widgets that have global keys reparent their subtrees when they are moved'
-      ' from one location in the tree to another location in the tree. In order'
-      ' to reparent its subtree, a widget must arrive at its new location in the'
-      ' tree in the same animation frame in which it was removed from its old'
-      ' location the tree.';
-  bool isExpanded = true;
-  bool isExpanded2 = true;
   List data = [
     [
       '1',
@@ -117,7 +104,7 @@ class _AdminidtrativeSetupState extends State<AdminidtrativeSetup> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Adminidtrative Setup"),
+        title: Text("District Collectorate"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -153,16 +140,34 @@ class _AdminidtrativeSetupState extends State<AdminidtrativeSetup> {
                   horizontalMargin: 15,
                   dataRowHeight: 80,
                   minWidth: 600,
-                  lmRatio: 50,
+                  headingRowColor: MaterialStateProperty.all(
+                      Color.fromRGBO(222, 218, 120, 0.5)),
                   columns: [
                     DataColumn2(
-                        label: Center(child: Text('Sl.no')),
+                        label: Center(
+                            child: Text(
+                          'Sl.no',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
+                        size: ColumnSize.S),
+                    DataColumn2(
+                        label: Text(
+                          'Section Name',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        size: ColumnSize.S),
+                    DataColumn2(
+                        label: Text(
+                          'Section Head',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                         size: ColumnSize.L),
                     DataColumn2(
-                        label: Text('Section Name'), size: ColumnSize.L),
-                    DataColumn2(
-                        label: Text('Section Head'), size: ColumnSize.L),
-                    DataColumn2(label: Text('Subject'), size: ColumnSize.L),
+                        label: Text(
+                          'Subject',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        size: ColumnSize.L),
                   ],
                   rows: List<DataRow>.generate(
                       data.length,
@@ -201,16 +206,36 @@ class _AdminidtrativeSetupState extends State<AdminidtrativeSetup> {
               child: DataTable2(
                   columnSpacing: 5,
                   horizontalMargin: 15,
-                  dataRowHeight: 80,
-                  minWidth: 600,
-                  lmRatio: 50,
+                  dataRowHeight: 50,
+                  minWidth: 400,
+                  headingRowColor: MaterialStateProperty.all(
+                      Color.fromRGBO(222, 158, 120, 0.5)),
                   columns: [
                     DataColumn2(
-                        label: Center(child: Text('Sl.no')),
-                        size: ColumnSize.L),
-                    DataColumn2(label: Text('Name'), size: ColumnSize.L),
-                    DataColumn2(label: Text('From'), size: ColumnSize.L),
-                    DataColumn2(label: Text('To'), size: ColumnSize.L),
+                        label: Center(
+                            child: Text(
+                          'Sl.no',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
+                        size: ColumnSize.S),
+                    DataColumn2(
+                        label: Text(
+                          'Name',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        size: ColumnSize.M),
+                    DataColumn2(
+                        label: Text(
+                          'From',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        size: ColumnSize.S),
+                    DataColumn2(
+                        label: Text(
+                          'To',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        size: ColumnSize.S),
                   ],
                   rows: List<DataRow>.generate(
                       ft.length,
